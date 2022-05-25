@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
     const location = useLocation()
-    console.log(location.pathname);
     return (
         < div className={`mt-10 bg-gray-600 text-white py-4 ${(location.pathname === '/signin' || location.pathname === '/signup') ? 'hidden' : 'block'}`
         }>

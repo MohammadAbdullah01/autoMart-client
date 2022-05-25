@@ -14,6 +14,7 @@ import SignUp from "./Pages/Shared/SignUp";
 import NotFound from "./Pages/Shared/NotFound";
 import Footer from "./Pages/Shared/Footer";
 import Portfolio from "./Pages/Portfolio/Portfolio";
+import Payment from "./Pages/Dashboard/Payment";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path='profile' element={<Profile></Profile>}></Route>
           </Route>
           <Route path='purchase/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
         <ToastContainer />

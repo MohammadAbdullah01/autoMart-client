@@ -19,9 +19,11 @@ const Navbar = () => {
         {user &&
             <>
                 <li><Link to='/dashboard'>Dashboard</Link></li>
-                <span className='text-sm font-bold block mt-2 lg:hidden'><FaUserAlt className='inline mb-1' /> {user?.displayName}</span>
+                <span className='text-sm font-bold block my-2 ml-4 lg:hidden '><FaUserAlt className='inline mb-1' /> {user?.displayName}</span>
+                <button onClick={logOut} className='btn btn-primary block md:hidden'>Sign Out</button>
             </>
         }
+        {!user && <button className='btn btn-primary block md:hidden' onClick={() => navigate('/signin')}>Sign in</button>}
     </>
     return (
         <div class="navbar bg-base-100">
@@ -50,10 +52,10 @@ const Navbar = () => {
                             </label>
                         }
                         <span className='text-sm font-bold lg:mr-3 hidden lg:block'><FaUserAlt className='inline mb-1' /> {user?.displayName}</span>
-                        <button onClick={logOut} className='btn btn-primary'>Sign Out</button>
+                        <button onClick={logOut} className='btn btn-primary hidden md:block'>Sign Out</button>
                     </>
                     :
-                    <button className='btn btn-primary' onClick={() => navigate('/signin')}>Sign in</button>
+                    <button className='btn btn-primary hidden md:block' onClick={() => navigate('/signin')}>Sign in</button>
                 }
             </div>
         </div>
