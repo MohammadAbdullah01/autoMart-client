@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Home from "./Pages/Home/Home";
+import Purchase from "./Pages/Home/Purchase";
+import Navbar from "./Pages/Shared/Navbar";
+import RequireAuth from "./Pages/Shared/RequireAuth";
+import SignIn from "./Pages/Shared/SignIn";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import Orders from "./Pages/Dashboard/Orders";
+import Review from "./Pages/Dashboard/Review";
+import Profile from "./Pages/Dashboard/Profile";
+import SignUp from "./Pages/Shared/SignUp";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='max-w-7xl	mx-auto px-10'>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='signin' element={<SignIn></SignIn>}></Route>
+        <Route path='signup' element={<SignUp></SignUp>}></Route>
+        <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
+          <Route index element={<Orders></Orders>}></Route>
+          <Route path='review' element={<Review></Review>}></Route>
+          <Route path='profile' element={<Profile></Profile>}></Route>
+        </Route>
+        <Route path='purchase/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
+      </Routes>
+      <ToastContainer />
     </div>
   );
 }
