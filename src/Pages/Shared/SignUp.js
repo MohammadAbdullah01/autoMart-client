@@ -7,6 +7,7 @@ import auth from '../Firebase/firebase.init';
 import LoadingSpinner from './LoadingSpinner';
 
 const SignUp = () => {
+    const navigate = useNavigate()
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [
         createUserWithEmailAndPassword,
@@ -17,8 +18,10 @@ const SignUp = () => {
     const [sendEmailVerification, sending, verificationError] = useSendEmailVerification(
         auth
     );
-    // const [token] = useToken(user || gUser)
-
+    const [token] = useToken(user || gUser)
+    if (token) {
+        navigate('/')
+    }
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [updateProfile, updating, nameError] = useUpdateProfile(auth);
     useEffect(() => {
@@ -31,14 +34,6 @@ const SignUp = () => {
         await createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName: data.name })
     };
-
-    const navigate = useNavigate()
-    // useEffect(() => {
-    //     if (token) {
-    //         navigate('/')
-    //     }
-    // }, [token])
-
     let errorMessage = "";
     if (gError || error) {
         errorMessage = <p className='text-red-500'>{gError?.message || error?.message || nameError?.message}</p>;
@@ -127,7 +122,7 @@ const SignUp = () => {
                         </div>
                         {errorMessage}
                         <input className='btn w-full' type="submit" value='Register' />
-                        <p>Already have an account? <Link className='text-secondary' to='/login'>Please Login</Link></p>
+                        <p>Already have an account? <Link className='text-secondary' to='/signin'>Please Login</Link></p>
                     </form>
                     <div className="divider">OR</div>
                     <button className="btn btn-outline"

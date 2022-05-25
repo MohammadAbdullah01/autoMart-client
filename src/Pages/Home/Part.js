@@ -5,7 +5,7 @@ const Part = ({ part }) => {
 
     const navigate = useNavigate()
     const { _id: id, title, minOrderQuantity, desc, img, price, available } = part;
-    console.log(part);
+
     return (
         <>
             <div class="card lg:card-side bg-base-100 shadow-xl p-5">

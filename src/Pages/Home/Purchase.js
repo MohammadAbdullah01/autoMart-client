@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../Firebase/firebase.init';
 import LoadingSpinner from '../Shared/LoadingSpinner';
+import { FaArrowDown } from "react-icons/fa";
 
 const Purchase = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -12,7 +13,7 @@ const Purchase = () => {
     const { id } = useParams()
     const [part, setPart] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/parts/${id}`)
+        fetch(`https://lit-reaches-35676.herokuapp.com/parts/${id}`)
             .then(res => res.json())
             .then(data => setPart(data))
     }, [id, apiLoading])
@@ -45,11 +46,12 @@ const Purchase = () => {
             email: e.target.email.value,
             address: e.target.address.value,
             phone: e.target.phone.value,
+            paid: false,
             quantity: newQuantity
         }
 
 
-        fetch(`http://localhost:5000/orders`, {
+        fetch(`https://lit-reaches-35676.herokuapp.com/orders`, {
             method: "post",
             headers: {
                 'content-type': "application/json"
@@ -90,7 +92,8 @@ const Purchase = () => {
                 </div>
             </div >
             <div className='mx-auto  w-4/5 lg:w-1/2 mt-8'>
-                <h1 className='font-bold text-center text-3xl mt-3'>Order Now</h1>
+                <h1 className='font-bold text-center text-3xl mt-3 '>Order Now</h1>
+                <p className='text-center w-6 mx-auto block mt-2'> <FaArrowDown className='animate-bounce' /></p>
                 <div class="card mx-auto mt-3 p-2 bg-base-100 shadow-xl">
                     <form onSubmit={handleSubmit}>
                         <div class="form-control mx-auto text-left w-full max-w-xs">

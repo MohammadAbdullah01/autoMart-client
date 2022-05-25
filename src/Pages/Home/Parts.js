@@ -19,12 +19,12 @@ const Parts = () => {
     // ]
     // const [parts, setParts] = useState([])
     // useEffect(() => {
-    //     fetch("http://localhost:5000/parts")
+    //     fetch("https://lit-reaches-35676.herokuapp.com/parts")
     //         .then(res => res.json())
     //         .then(data => setParts(data))
     // }, [])
     const { isLoading, data: parts, refetch } = useQuery('autoParts', () =>
-        fetch('http://localhost:5000/parts').then(res =>
+        fetch('https://lit-reaches-35676.herokuapp.com/parts').then(res =>
             res.json()
         )
     )

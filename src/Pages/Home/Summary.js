@@ -24,7 +24,7 @@ const Summary = () => {
                             {({ isVisible }) => (
                                 <div style={{ height: 10 }}>
                                     <span className='block mx-auto mr-[54%] lg:mr-[55%] w-1'><BsFillPeopleFill /></span>
-                                    {isVisible ? <CountUp end={35000} /> : null}
+                                    {isVisible ? <CountUp end={35600} /> : null}+
                                     <br />
                                     <p className='text-xs lg:text-xl'>Happy Clients</p>
                                 </div>
@@ -52,7 +52,7 @@ const Summary = () => {
                             {({ isVisible }) => (
                                 <div style={{ height: 10 }}>
                                     <span className='block mx-auto mr-[54%] lg:mr-[55%] w-1'><FaStar /></span>
-                                    {isVisible ? <CountUp end={19600} /> : null}
+                                    {isVisible ? <CountUp end={19600} /> : null}+
                                     <br />
                                     <p className='text-xs lg:text-xl'>Reviews</p>
                                 </div>

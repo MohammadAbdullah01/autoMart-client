@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import auth from '../Firebase/firebase.init';
 import LoadingSpinner from '../Shared/LoadingSpinner';
+import DeleteModal from './DeleteModal';
 import Order from './Order';
 
 const Orders = () => {
+    const [product, setProduct] = useState(null)
+    const [user, loading, error] = useAuthState(auth)
     const { isLoading, data: orders, refetch } = useQuery('myOrders', () =>
-        fetch('http://localhost:5000/orders').then(res =>
+        fetch(`http://localhost:5000/orders/${user?.email}`).then(res =>
             res.json()
         )
     )
@@ -23,19 +28,26 @@ const Orders = () => {
                             <th>Product</th>
                             <th>Quantity</th>
                             <th>Total Price</th>
-                            <th>Payment</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
 
-                        {orders.map((order, index) => <Order
+                        {orders?.map((order, index) => <Order
                             key={order._id}
                             order={order}
                             index={index}
+                            refetch={refetch}
+                            setProduct={setProduct}
                         ></Order>)}
                     </tbody>
                 </table>
             </div>
+            {product && <DeleteModal
+                product={product}
+                refetch={refetch}
+                setProduct={setProduct}
+            ></DeleteModal>}
         </div>
     );
 };
