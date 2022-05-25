@@ -11,24 +11,33 @@ import Orders from "./Pages/Dashboard/Orders";
 import Review from "./Pages/Dashboard/Review";
 import Profile from "./Pages/Dashboard/Profile";
 import SignUp from "./Pages/Shared/SignUp";
+import NotFound from "./Pages/Shared/NotFound";
+import Footer from "./Pages/Shared/Footer";
+import Portfolio from "./Pages/Portfolio/Portfolio";
 
 function App() {
   return (
-    <div className='max-w-7xl	mx-auto px-10'>
-      <Navbar></Navbar>
-      <Routes>
-        <Route path='/' element={<Home></Home>}></Route>
-        <Route path='signin' element={<SignIn></SignIn>}></Route>
-        <Route path='signup' element={<SignUp></SignUp>}></Route>
-        <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
-          <Route index element={<Orders></Orders>}></Route>
-          <Route path='review' element={<Review></Review>}></Route>
-          <Route path='profile' element={<Profile></Profile>}></Route>
-        </Route>
-        <Route path='purchase/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
-      </Routes>
-      <ToastContainer />
-    </div>
+    <>
+      <div className='max-w-7xl	mx-auto px-10'>
+        <Navbar></Navbar>
+        <Routes>
+          <Route path='/' element={<Home></Home>}></Route>
+          <Route path='signin' element={<SignIn></SignIn>}></Route>
+          <Route path='signup' element={<SignUp></SignUp>}></Route>
+          <Route path='portfolio' element={<Portfolio></Portfolio>}></Route>
+          <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
+            <Route index element={<Orders></Orders>}></Route>
+            <Route path='review' element={<Review></Review>}></Route>
+            <Route path='profile' element={<Profile></Profile>}></Route>
+          </Route>
+          <Route path='purchase/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
+          <Route path='*' element={<NotFound></NotFound>}></Route>
+        </Routes>
+        <ToastContainer />
+
+      </div>
+      <Footer></Footer>
+    </>
   );
 }
 

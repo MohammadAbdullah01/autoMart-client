@@ -5,7 +5,7 @@ const Order = ({ order, index, setProduct }) => {
     return (
         <tr>
             <th>{index + 1}</th>
-            <td>{product} pcs.</td>
+            <td>{product}</td>
             <td>{quantity} pcs.</td>
             <td>${totalPrice}</td>
             <td>

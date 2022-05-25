@@ -61,13 +61,7 @@ const Summary = () => {
                     </p>
                 </div>
             </div>
-            {/* <div className='bg-rose-300 p-2 rounded shadow-xl my-5'>
-                <div>
-                    <h1 className='text-xl font-bold'>We are highly secure about our clients product.</h1>
-                </div>
-                
-            </div> */}
-            <div class="hero bg-base-200 my-5 rounded">
+            <div class="hero bg-rose-50 my-5 rounded">
                 <div class="hero-content flex-col lg:flex-row">
                     <img className='lg:w-1/3' src={smile} alt='img' />
                     <div>
