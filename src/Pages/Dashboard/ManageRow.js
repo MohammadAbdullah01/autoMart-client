@@ -37,19 +37,19 @@ const ManageRow = ({ order, refetch }) => {
 
                     <div>
                         <div class="font-bold">{product}</div>
-                        <div class="text-sm opacity-50">Quantity:{quantity}</div>
+                        <div class="text-sm opacity-50">ID:{id}</div>
                     </div>
                 </div>
             </td>
             <td>
                 Name: {name}, Email {email}
                 <br />
-                <span class="badge badge-ghost badge-sm">Total Price:{totalPrice}</span>
+                <span class="badge badge-ghost badge-sm">Quantity: {quantity}, Total Price:{totalPrice}</span>
             </td>
             <td><div>
 
-                {status === "pending" && <p className='text-rose-500'>Pending</p>}
-                {status === "shipped" && <p className='text-green-500'>Shipped</p>}
+                {status === "pending" && <p className='text-rose-500 mb-2'>Pending</p>}
+                {status === "shipped" && <p className='text-green-500' >Shipped</p>}
                 {status === "pending" && <button onClick={handleShip} className='btn btn-primary btn-sm'>ship</button>}
                 {!paid && <button onClick={handleDelete} className='btn btn-primary btn-sm'>Delete</button>}
             </div></td>
