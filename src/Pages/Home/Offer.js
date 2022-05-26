@@ -9,7 +9,7 @@ const Offer = () => {
                 <h1 className='font-bold text-xl md:text-3xl'><FaPaperPlane className='text-orange-400 inline' /> UP TO AUTO MART
                 </h1>
 
-                <p className='text-lg md:text-2xl text-gray-400'>Recevie $50 Coupon for Shopping</p>
+                <p className='text-lg md:text-2xl text-gray-400'>Receive $50 Coupon for Shopping</p>
             </div>
             <div>
                 <input type="email" placeholder='Enter your email address..' className=' border-r-inherit p-2 my-2 text-black' /><input style={{ text: "black" }} className="   border-l-inherit bg-orange-400 p-2 my-2 font-bold text-white cursor-pointer" type="submit" value="SIGN UP" />

@@ -46,9 +46,9 @@ const Navbar = () => {
             <div class="navbar-end">
                 {user ?
                     <>
-                        {location.pathname === "/dashboard" &&
-                            <label tabindex="1" for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden mr-3 lg:mr-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>  Open
+                        {(location.pathname === "/dashboard" || location.pathname === "/dashboard/review" || location.pathname === "/dashboard/profile") &&
+                            <label tabindex="1" for="my-drawer-2" class="btn btn-primary drawer-button  mr-3 lg:mr-0 block lg:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                             </label>
                         }
                         <span className='text-sm font-bold lg:mr-3 hidden lg:block'><FaUserAlt className='inline mb-1' /> {user?.displayName}</span>
