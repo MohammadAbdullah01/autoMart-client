@@ -7,7 +7,6 @@ import auth from '../Firebase/firebase.init';
 const Dashboard = () => {
     const [user, loading, error] = useAuthState(auth);
     const [admin] = useAdmin(user)
-    console.log(admin);
     return (
         <div class="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
