@@ -12,7 +12,7 @@ const CheckoutForm = ({ order }) => {
     const [success, setSuccess] = useState("")
     const { _id: id, totalPrice: price, name, email } = order;
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://lit-reaches-35676.herokuapp.com/create-payment-intent', {
             method: "post",
             headers: {
                 'content-type': "application/json",
@@ -69,7 +69,7 @@ const CheckoutForm = ({ order }) => {
             setCardError("")
             setSuccess("successfully completed payment")
             setTrxId(paymentIntent.id)
-            fetch(`http://localhost:5000/booking/${id}`, {
+            fetch(`https://lit-reaches-35676.herokuapp.com/booking/${id}`, {
                 method: "PATCH",
                 headers: {
                     'content-type': "application/json",

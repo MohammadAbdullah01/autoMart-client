@@ -5,7 +5,7 @@ import ManageRow from './ManageRow';
 
 const ManageOrders = () => {
     const { isLoading, data: orders, refetch } = useQuery('orders', () =>
-        fetch('http://localhost:5000/orders').then(res =>
+        fetch('https://lit-reaches-35676.herokuapp.com/orders').then(res =>
             res.json()
         )
     )

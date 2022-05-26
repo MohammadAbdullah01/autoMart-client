@@ -4,7 +4,7 @@ const ManageRow = ({ order, refetch }) => {
 
     const { _id: id, product, email, name, orderedId, paid, quantity, totalPrice, status } = order;
     const handleShip = () => {
-        fetch(`http://localhost:5000/ship/${id}`, {
+        fetch(`https://lit-reaches-35676.herokuapp.com/ship/${id}`, {
             method: "put",
             headers: {
                 'content-type': "application/json"
@@ -19,7 +19,7 @@ const ManageRow = ({ order, refetch }) => {
     const handleDelete = () => {
         const proceed = window.confirm('Are you sure you want to delete?')
         if (proceed) {
-            fetch(`http://localhost:5000/ship/${id}`, {
+            fetch(`https://lit-reaches-35676.herokuapp.com/ship/${id}`, {
                 method: "delete"
             })
                 .then(res => res.json())
