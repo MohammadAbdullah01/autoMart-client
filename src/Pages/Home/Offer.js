@@ -6,7 +6,7 @@ const Offer = () => {
     return (
         <div style={{ background: `url(${bg})`, backgroundAttachment: "fixed", backgroundPosition: "center center", backgroundSize: "cover" }} className="h-48  text-white text-center flex justify-center align-middle flex-col py-3 ">
             <div>
-                <h1 className='font-bold text-xl md:text-3xl'><FaPaperPlane className='text-orange-400 inline' /> UP TO AUTO MART
+                <h1 className='font-bold text-xl md:text-3xl'><FaPaperPlane className='text-orange-400 inline' /> SIGN UP TO AUTO MART
                 </h1>
 
                 <p className='text-lg md:text-2xl text-gray-400'>Receive $50 Coupon for Shopping</p>

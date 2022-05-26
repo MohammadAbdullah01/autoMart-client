@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 const Part = ({ part }) => {
 
     const navigate = useNavigate()
@@ -8,7 +9,7 @@ const Part = ({ part }) => {
 
     return (
         <>
-            <div class="card lg:card-side bg-base-100 shadow-xl p-5">
+            <div class="card lg:card-side bg-rose-50 shadow-xl p-5">
                 <figure ><img className='lg:w-[100px]' src={img} alt="Album" /></figure>
                 <div class="card-body">
                     <h2 class="card-title text-2xl">{title}</h2>

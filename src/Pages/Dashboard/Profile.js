@@ -20,7 +20,7 @@ const Profile = () => {
         const name = e.target.name.value;
         const address = e.target.address.value;
         const education = e.target.education.value;
-        const phone = e.target.education.value;
+        const phone = e.target.phone.value;
         const linkedin = e.target.linkedin.value;
 
         const updateUser = {
@@ -41,6 +41,7 @@ const Profile = () => {
             .then(data => {
                 toast.success("Profile updated")
                 setStateLoading(!stateLoading)
+                e.target.reset()
             })
     }
     console.log(profile);
@@ -49,12 +50,12 @@ const Profile = () => {
             <h1 className='text-2xl font-bold mb-2 text-rose-400 text-center'>My Profile</h1>
             <div className='mx-auto  w-4/5 lg:w-1/2 mt-8'>
                 <div class="card mx-auto mt-3 px-4 py-5 bg-base-100 shadow-xl">
-                    {profile?.name && <p className='text-xl  mb-2'><span className='text-rose-400'>Name:</span> {profile?.name}</p>}
-                    <p className='text-xl  mb-2'><span className='text-rose-400'>Email:</span> {profile?.user}</p>
-                    {profile?.address && <p className='text-xl  mb-2'><span className='text-rose-400'>Address:</span> {profile?.address}</p>}
-                    {profile?.education && <p className='text-xl  mb-2'><span className='text-rose-400'>Education:</span> {profile?.education}</p>}
-                    {profile?.phone && <p className='text-xl  mb-2'><span className='text-rose-400'>Phone:</span> {profile?.phone}</p>}
-                    {profile?.linkedin && <p className='text-xl  mb-2'><span className='text-rose-400'>Linkedin Link:</span> <a href={profile?.linkedin} className='text-sky-400'>{profile?.linkedin}</a></p>}
+                    {profile?.name && <p className='text-base md:text-xl  mb-2'><span className='text-rose-400'>Name:</span> {profile?.name}</p>}
+                    <p className='text-base md:text-xl  mb-2'><span className='text-rose-400'>Email:</span> {profile?.user}</p>
+                    {profile?.address && <p className='text-base md:text-xl  mb-2'><span className='text-rose-400'>Address:</span> {profile?.address}</p>}
+                    {profile?.education && <p className='text-base md:text-xl  mb-2'><span className='text-rose-400'>Education:</span> {profile?.education}</p>}
+                    {profile?.phone && <p className='text-base md:text-xl  mb-2'><span className='text-rose-400'>Phone:</span> {profile?.phone}</p>}
+                    {profile?.linkedin && <p className='text-base md:text-xl  mb-2'><span className='text-rose-400'>Linkedin Link:</span> <a href={profile?.linkedin} className='text-sky-400'>{profile?.linkedin}</a></p>}
                 </div>
             </div>
             <div className='mx-auto  w-4/5 lg:w-1/2 mt-8'>

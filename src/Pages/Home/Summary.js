@@ -16,7 +16,7 @@ import { AiTwotoneFlag } from "react-icons/ai";
 const Summary = () => {
     return (
         <div>
-            <h1 className='text-3xl lg:text-5xl font-bold text-center mt-16 mb-5' >OUR BUSINESS SUMMARY</h1>
+            <h1 className='text-3xl lg:text-5xl font-bold text-center mt-16 mb-5 text-rose-400' >OUR BUSINESS SUMMARY</h1>
             <div className='grid grid-cols-3 h-28 md:h-48 gap-5'>
                 <div className=' pt-7 lg:pt-10 text-center shadow-lg p-2 bg-rose-400 rounded-md text-white'>
                     <p className='text-2xl font-bold lg:text-5xl' >
