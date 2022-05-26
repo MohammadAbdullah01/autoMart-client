@@ -7,11 +7,14 @@ import DeleteModal from './DeleteModal';
 import Order from './Order';
 import { loadStripe } from '@stripe/stripe-js';
 import CheckoutForm from './CheckoutForm'
+import { useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
 
 
 
 const Orders = () => {
     const [product, setProduct] = useState(null)
+    const navigate = useNavigate('/signin')
     const [user, loading, error] = useAuthState(auth)
     const { isLoading, data: orders, refetch } = useQuery('allorders', () =>
         fetch(`https://lit-reaches-35676.herokuapp.com/orders/${user?.email}`, {
@@ -19,8 +22,12 @@ const Orders = () => {
             headers: {
                 "authorization": `Bearer ${localStorage.getItem("accessToken")}`
             }
-        }).then(res =>
-            res.json()
+        }).then(res => {
+            if (res.status === 401 || res.status === 403) {
+                return signOut(auth)
+            }
+            return res.json()
+        }
         )
     )
     if (isLoading) {
