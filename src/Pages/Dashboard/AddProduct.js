@@ -2,7 +2,6 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const AddProduct = () => {
-    //     { title: "Alternator", desc: "An alternator is a type of electric generator used in modern automobiles to charge the battery and to power the electrical system when its engine is running.", img: "https://www.autozone.com/images/MEDIA_ProductCatalog/m11590001_Prod-Alternator.jpg", minOrderQuantity: "1000", available: "7500", price: "38" },
 
     const handleSubmit = (e) => {
         e.preventDefault()

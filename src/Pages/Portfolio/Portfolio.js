@@ -32,8 +32,8 @@ const Portfolio = () => {
                 <h1 className='text-rose-400 font-bold text-2xl'>My 3 best Project Link:</h1>
                 <ul>
                     <li>Fridge Warehoue: <a className='text-sky-600' href="https://giganticbox-42710.web.app/">https://giganticbox-42710.web.app/</a></li>
-                    <li>Gym Website: <a className='text-sky-600' href="https://gymaster-78fd8.web.app/"> https://gymaster-78fd8.web.app</a>/</li>
-                    <li>Review Website: <a className='text-sky-600' href="https://compify-review-react.netlify.app/">https://compify-review-react.netlify.app/</a>/</li>
+                    <li>Gym Website: <a className='text-sky-600' href="https://gymaster-78fd8.web.app/"> https://gymaster-78fd8.web.app</a></li>
+                    <li>Review Website: <a className='text-sky-600' href="https://compify-review-react.netlify.app/">https://compify-review-react.netlify.app/</a></li>
                 </ul>
             </div>
         </div>

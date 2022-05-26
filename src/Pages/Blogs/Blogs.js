@@ -3,7 +3,6 @@ import React from 'react';
 const Blogs = () => {
     return (
         <div>
-
             <div className='shadow-xl p-5'>
                 <h1 className='text-xl font-bold'> Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts?</h1>
                 <p className="font-mono">
