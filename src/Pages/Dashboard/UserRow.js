@@ -5,7 +5,7 @@ const UserRow = ({ oneUser, index, refetch }) => {
 
     const { user } = oneUser
     const handleAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${user}`, {
+        fetch(`https://lit-reaches-35676.herokuapp.com/user/admin/${user}`, {
             method: "put",
             headers: {
                 "authorization": `Bearer ${localStorage.getItem("accessToken")}`,

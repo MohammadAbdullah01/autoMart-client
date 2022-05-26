@@ -22,7 +22,7 @@ const AddProduct = () => {
             price: price
         }
         console.log(newProduct);
-        fetch('http://localhost:5000/parts', {
+        fetch('https://lit-reaches-35676.herokuapp.com/parts', {
             method: "post",
             headers: {
                 'content-type': "application/json"
