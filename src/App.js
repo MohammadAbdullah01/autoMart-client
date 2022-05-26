@@ -20,17 +20,19 @@ import AddProduct from "./Pages/Dashboard/AddProduct";
 import ManageOrders from "./Pages/Dashboard/ManageOrders";
 import ManageProducts from "./Pages/Dashboard/ManageProducts";
 import RequireAdmin from "./Pages/Shared/RequireAdmin";
+import Blogs from "./Pages/Blogs/Blogs";
 
 function App() {
   return (
     <>
-      <div className='max-w-7xl	mx-auto px-10'>
+      <div className='max-w-7xl	mx-auto px-2 md:px-10'>
         <Navbar></Navbar>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='signin' element={<SignIn></SignIn>}></Route>
           <Route path='signup' element={<SignUp></SignUp>}></Route>
           <Route path='portfolio' element={<Portfolio></Portfolio>}></Route>
+          <Route path='blogs' element={<Blogs></Blogs>}></Route>
           <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
             <Route index element={<Orders></Orders>}></Route>
             <Route path='review' element={<Review></Review>}></Route>

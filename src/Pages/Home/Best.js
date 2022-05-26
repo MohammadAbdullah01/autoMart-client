@@ -6,7 +6,7 @@ import calendar from '../../Assets/calendar.svg'
 const Best = () => {
     return (
         <>
-            <div class="divider mt-10 mb-8"><span className='text-xl font-bold text-rose-400 md:text-4xl lg:text-5xl'>Why Choose AutoParts.com</span></div>
+            <div class="text-center mt-10 mb-8"><span className='text-xl font-bold text-rose-400 md:text-4xl lg:text-5xl'>Why Choose AutoParts.com</span></div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 bg-rose-50 p-3 mb-12'>
                 <div className='mt-5 md:mt-0'>
                     <h1 className='text-center text-xl font-bold md:text-2xl'><span className='border-b-4 border-b-orange-500 '>Guaranteed Fit</span>

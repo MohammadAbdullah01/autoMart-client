@@ -10,7 +10,7 @@ const Footer = () => {
             <div className='flex flex-col lg:flex-row  justify-around text-center '>
                 <div >
                     <h5 className='text-xl font-bold mb-2'>Send your feedback</h5>
-                    <input type="text" placeholder="Your message" class="input input-bordered w-full max-w-xs" /><br />
+                    <input type="text" placeholder="Your message" class="input input-bordered w-40 md:w-56" /><br />
                     <button className='btn btn-accent mt-2'>send</button>
                 </div>
                 <div className='mt-5 lg:mt-0'>

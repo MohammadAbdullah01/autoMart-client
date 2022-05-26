@@ -32,10 +32,13 @@ const Parts = () => {
         return <LoadingSpinner></LoadingSpinner>
     }
 
+    const firstSixItems = parts?.slice(0, 6)
+
+
 
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-            {parts.map(part => <Part
+            {firstSixItems.map(part => <Part
                 key={part._id}
                 part={part}
             ></Part>)}

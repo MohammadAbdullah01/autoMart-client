@@ -14,11 +14,12 @@ const Navbar = () => {
     const location = useLocation()
     const navigate = useNavigate()
     const menuItems = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/portfolio'>Portfolio</Link></li>
+        <li><Link className='font-semibold' to='/'>Home</Link></li>
+        <li><Link className='font-semibold' to='/portfolio'>Portfolio</Link></li>
+        <li><Link className='font-semibold' to='/blogs'>Blogs</Link></li>
         {user &&
             <>
-                <li><Link to='/dashboard'>Dashboard</Link></li>
+                <li><Link className='font-semibold' to='/dashboard'>Dashboard</Link></li>
                 <span className='text-sm font-bold block my-2 ml-4 lg:hidden '><FaUserAlt className='inline mb-1' /> {user?.displayName}</span>
                 <button onClick={logOut} className='btn btn-primary block md:hidden'>Sign Out</button>
             </>

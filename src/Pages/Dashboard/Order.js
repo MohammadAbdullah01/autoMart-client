@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Order = ({ order, index, setProduct }) => {
-    const { img, quantity, product, totalPrice, paid, _id: id } = order
+    const { img, quantity, product, totalPrice, paid, _id: id, transactionId } = order
     const navigate = useNavigate()
     return (
         <tr>
@@ -18,7 +18,10 @@ const Order = ({ order, index, setProduct }) => {
                             <button onClick={() => navigate(`/payment/${id}`)} className='btn btn-sm'>pay</button>
                         </>
                         :
-                        <p>successfully paid</p>
+                        <>
+                            <p className='text-green-600'>paid</p>
+                            <p className='text-green-600'>TrxId: {transactionId}</p>
+                        </>
                 }
             </td>
         </tr>
