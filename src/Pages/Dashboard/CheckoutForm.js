@@ -7,7 +7,7 @@ const CheckoutForm = ({ order }) => {
     const stripe = useStripe();
     const elements = useElements();
     useEffect(() => {
-        // fetch("http://localhost:5000/create-payment-intent", {
+        // fetch("https://lit-reaches-35676.herokuapp.com/create-payment-intent", {
         //     method: "post",
         //     headers: {
         //         'content-type': "application/json",
@@ -22,7 +22,7 @@ const CheckoutForm = ({ order }) => {
         //         }
         //     })
 
-        fetch('http://localhost:5000/hi')
+        fetch('https://lit-reaches-35676.herokuapp.com/hi')
             .then(res => res.json())
             .then(data => console.log(data))
     }, [order?.price])

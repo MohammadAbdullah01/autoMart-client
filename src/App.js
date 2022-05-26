@@ -15,6 +15,10 @@ import NotFound from "./Pages/Shared/NotFound";
 import Footer from "./Pages/Shared/Footer";
 import Portfolio from "./Pages/Portfolio/Portfolio";
 import Payment from "./Pages/Dashboard/Payment";
+import AllUsers from "./Pages/Dashboard/AllUsers";
+import AddProduct from "./Pages/Dashboard/AddProduct";
+import ManageOrders from "./Pages/Dashboard/ManageOrders";
+import ManageProducts from "./Pages/Dashboard/ManageProducts";
 
 function App() {
   return (
@@ -30,6 +34,10 @@ function App() {
             <Route index element={<Orders></Orders>}></Route>
             <Route path='review' element={<Review></Review>}></Route>
             <Route path='profile' element={<Profile></Profile>}></Route>
+            <Route path='users' element={<AllUsers></AllUsers>}></Route>
+            <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+            <Route path='manageorders' element={<ManageOrders></ManageOrders>}></Route>
+            <Route path='manageproducts' element={<ManageProducts></ManageProducts>}></Route>
           </Route>
           <Route path='purchase/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
           <Route path='payment/:id' element={<Payment></Payment>}></Route>

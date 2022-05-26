@@ -39,7 +39,7 @@ const SignIn = () => {
 
     let errorMessage = "";
     if (gError || error) {
-        errorMessage = <p className='text-red-500'>{gError?.message || error?.message}</p>;
+        errorMessage = <p className='text-red-500'>{gError?.message.slice(22, -2) || error?.message.slice(22, -2)}</p>;
     }
     if (gLoading || loading || resetSending) {
         return <LoadingSpinner></LoadingSpinner>

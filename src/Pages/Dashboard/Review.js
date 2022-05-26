@@ -20,7 +20,7 @@ const Review = () => {
             name: name
         }
         console.log(userReview);
-        fetch(`http://localhost:5000/reviews`, {
+        fetch(`https://lit-reaches-35676.herokuapp.com/reviews`, {
             method: "post",
             headers: {
                 'content-type': "application/json"

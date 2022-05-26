@@ -10,7 +10,7 @@ const Profile = () => {
     const [profile, setProfile] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user?.email}`)
+        fetch(`https://lit-reaches-35676.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setProfile(data))
     }, [user?.email, stateLoading])
@@ -30,7 +30,7 @@ const Profile = () => {
             phone: phone,
             linkedin: linkedin
         }
-        fetch(`http://localhost:5000/updateuser/${profile.user}`, {
+        fetch(`https://lit-reaches-35676.herokuapp.com/updateuser/${profile.user}`, {
             method: "put",
             headers: {
                 'content-type': 'application/json'

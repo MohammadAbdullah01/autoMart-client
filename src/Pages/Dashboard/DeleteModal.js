@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const DeleteModal = ({ product, refetch, setProduct }) => {
     const { _id: id } = product;
     const handleDelete = id => {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://lit-reaches-35676.herokuapp.com/orders/${id}`, {
             method: "delete"
         })
             .then(res => res.json())

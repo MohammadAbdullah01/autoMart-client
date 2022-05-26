@@ -19,7 +19,7 @@ import 'swiper/less/pagination';
 const UserReviews = () => {
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/reviews")
+        fetch("https://lit-reaches-35676.herokuapp.com/reviews")
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

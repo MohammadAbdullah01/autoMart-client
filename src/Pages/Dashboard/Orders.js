@@ -14,7 +14,7 @@ const Orders = () => {
     const [product, setProduct] = useState(null)
     const [user, loading, error] = useAuthState(auth)
     const { isLoading, data: orders, refetch } = useQuery('allorders', () =>
-        fetch(`http://localhost:5000/orders/${user?.email}`, {
+        fetch(`https://lit-reaches-35676.herokuapp.com/orders/${user?.email}`, {
             method: "get",
             headers: {
                 "authorization": `Bearer ${localStorage.getItem("accessToken")}`

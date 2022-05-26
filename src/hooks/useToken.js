@@ -5,7 +5,7 @@
 //     const email = user?.user?.email;
 //     console.log(email);
 //     useEffect(() => {
-//         fetch(`http://localhost:5000/users/${email}`, {
+//         fetch(`https://lit-reaches-35676.herokuapp.com/users/${email}`, {
 //             method: "put",
 //             headers: {
 //                 'content-type': "application/json"
@@ -30,7 +30,7 @@ const useToken = user => {
     const currentUser = { email: email }
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/users/${email}`, {
+            fetch(`https://lit-reaches-35676.herokuapp.com/users/${email}`, {
                 method: "put",
                 headers: {
                     'content-type': "application/json"
