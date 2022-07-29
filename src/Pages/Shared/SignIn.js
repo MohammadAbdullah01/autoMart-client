@@ -105,7 +105,7 @@ const SignIn = () => {
                         </div>
                         {errorMessage}
                         <input className='btn w-full' type="submit" value='Login' />
-                        <p>New at Doctors Portal? <Link className='text-secondary' to='/signup'>Please Signup</Link></p>
+                        <p>New at Auto Mart? <Link className='text-secondary' to='/signup'>Please Signup</Link></p>
                         <p>Forgot Password? <span className='text-secondary cursor-pointer'
                             onClick={async () => {
                                 await sendPasswordResetEmail(controlInput?.email);

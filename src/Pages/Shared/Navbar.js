@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../Firebase/firebase.init';
 import { FaUserAlt } from "react-icons/fa";
 
@@ -14,9 +14,9 @@ const Navbar = () => {
     const location = useLocation()
     const navigate = useNavigate()
     const menuItems = <>
-        <li><Link className='font-semibold' to='/'>Home</Link></li>
-        <li><Link className='font-semibold' to='/portfolio'>Portfolio</Link></li>
-        <li><Link className='font-semibold' to='/blogs'>Blogs</Link></li>
+        <li><NavLink className='font-semibold' to='/'>Home</NavLink></li>
+        <li><NavLink className='font-semibold' to='/portfolio'>Portfolio</NavLink></li>
+        <li><NavLink className='font-semibold' to='/blogs'>Blogs</NavLink></li>
         {user &&
             <>
                 <li><Link className='font-semibold' to='/dashboard'>Dashboard</Link></li>
